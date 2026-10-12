@@ -1,3 +1,11 @@
+html,body {
+    height:100%;
+    background-color: rgb(217, 217, 217);
+    margin:0;
+    overflow-x:hidden;
+    min-height:100%;
+    padding-bottom:1500px;
+}
 .header{
     position:absolute;
     border:none;
@@ -64,4 +72,74 @@
     width:278px;
     font-size:24px;
     left:856px; top:1010px;
+}
+.and_more_tour_of_churches{
+    width:243px;
+    font-size:32px;
+    left:1230px; top:860px;
+}
+.animals_world{
+    position:absolute;
+    margin:0;
+    font-family:'Alice',Arial; font-style:'Regular';
+}
+.animals{
+    width:236px;
+    font-size:28px;
+    left:435px; top:1130px;
+}
+.monkey_planet_img{
+    left:435px; top:1185px;
+    border-radius:50px;
+}
+.monkey_planet_write{
+    width:236px;
+    font-size:24px;
+    left:508px; top:1465px;
+}
+.farm_vdnh_img{
+    left:825px; top:1200px;
+    border-radius:35px;
+}
+.farm_vdnh_write{
+    width:296px;
+    font-size:24px;
+    left:867px; top:1465px;
+}
+.and_more_animals_world{
+    width:243px;
+    font-size:32px;
+    left:1230px; top:1300px;
+}
+.culture{
+    position:absolute;
+    margin:0;
+    font-family:'Alice',Arial; font-style:'Regular';
+    border-radius:20px;
+}
+.education{
+    width:340px;
+    font-size:28px; text-align:left;
+    left:435px; top:1585px;
+}
+.patriarshi_img{
+    left:435px; top:1640px;
+}
+.patriarshi_write{
+    width:222px;
+    font-size:24px;
+    left:491px; top:1860px;
+}
+.evreiski_museum_img{
+    left:825px; top:1640px;
+}
+.evreiski_museum_write{
+    width:197px;
+    font-size:24px;
+    left:896px; top:1860px;
+}
+.and_more_culture{
+    width:243px;
+    font-size:32px;
+    left:1230px; top:1715px;
 }
