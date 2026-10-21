@@ -26,6 +26,14 @@ html,body {
 .head_of_profile{
     right:150px; top:14px;
 }
+.registration_user{
+    position:absolute;
+    width:150px;
+    height:54px;
+    top:11px; right:28px;
+    background-color:transparent; border:none;
+    cursor:pointer;
+}
 .middle{
     position:absolute;
     margin:0;
