@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+
+# Виртуальное окружение
+.venv/
+venv/
+
+# Секреты
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# ОС
+.DS_Store
+Thumbs.db
+
+# Alembic (не игнорируем версии, только кэш)
+# alembic/versions/  — это НЕ игнорируем, коммитим миграции!
