@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="registration_user.css">
+    <title>Лучший сайт для покупки билетов и продвижения экскурсий</title>
+</head>
+<body>
+    <div class="header">
+        <img src="visual elements for main page/header_white.svg">
+        <p class="header new_path">Новый путь</p>
+        <p class="header enter">войти</p>
+        <img src="visual elements for main page/body_of_profile.svg" class="header body_of_profile">
+        <img src="visual elements for main page/head_of_profile.svg" class="header head_of_profile">
+        <button class="registration_user" onclick="open_user_window()"></button>
+    </div>
+    <div id="user_window" class="user_window">
+            <p class="background"></p>
+            <p class="exit">Выйти</p>
+            <div class="log_in">
+                <p class="log_in_enter">Вход</p>
+                <p class="log_in_text">Войдите в профиль с помощью никнейма и пароля</p>
+                <input type="text" name="nickname" placeholder=" имя (никнейм)" class="log_in_nickname">
+            </div>
+            <button class="exit_button" onclick="close_user_window()"></button>
+        </div>
+    </div>
+    <div class="middle">
+        <img src="visual elements for main page/moscow-city.jpg" class="middle main_picture">
+        <p class=" middle tour_of_Moscow">Экскурсии по Москве</p>
+        <p class="middle middle_walk">Прогулки по самым красивым,
+            запоминающимся и атмосферным местам 
+            столицы матушки России</p>
+    </div>
+    <div class="tour_of_churches">
+        <p class="tour_of_churches church">Экскурсии по духовным местам</p>
+        <img src="visual elements for main page/pokrovski_church.jpg" class="tour_of_churches pokrovski_img">
+        <p class="tour_of_churches pokrovski_write">покровский монастырь</p>
+        <img src="visual elements for main page/novodevichi_church.jpg" class="tour_of_churches novodevichi_img">
+        <p class="tour_of_churches novodevichi_write">новодевичий монастырь</p>
+        <p class="tour_of_churches and_more_tour_of_churches">и многое другое</p>
+    </div>
+    <div class="animals_world">
+        <p class="animals_world animals">В мире животных</p>
+        <img src="visual elements for main page/monkey_planet.jpg" class="animals_world monkey_planet_img">
+        <p class="animals_world monkey_planet_write">Планета обезьян</p>
+        <img src="visual elements for main page/farm_vdnh.jpg" class="animals_world farm_vdnh_img">
+        <p class="animals_world farm_vdnh_write">городская ферма на ВДНХ</p>
+        <p class="animals_world and_more_animals_world">и многое другое</p>
+    </div>
+    <div class="culture">
+        <p class="culture education">Культурное просвещение</p>
+        <img src="visual elements for main page/patriarshi.jpg" class="culture patriarshi_img">
+        <p class="culture patriarshi_write">Патриаршие пруды</p>
+        <img src="visual elements for main page/evreiski_museum.jpg" class="culture evreiski_museum_img">
+        <p class="culture evreiski_museum_write">Еврейский музей</p>
+        <p class="culture and_more_culture">и многое другое</p>
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        document.querySelectorAll('.tour_of_churches, .animals_world, .culture').forEach(element => {
+        element.setAttribute('data-aos', 'fade-up');
+        element.setAttribute('data-aos-once', 'false');
+        element.setAttribute('data-aos-easing','ease-in-out-cubic');
+        element.setAttribute('data-aos-duration', '800');
+        });
+        AOS.init();
+    </script>
+    <script src="registration_user.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+html,body {
+    height:100%;
+    background-color: rgb(217, 217, 217);
+    margin:0;
+    overflow-x:hidden;
+    min-height:100%;
+    padding-bottom:1500px;
+}
+.header{
+    position:absolute;
+    border:none;
+    margin:0;
+    font-family: 'Dela Gothic One',Arial; font-style:'Regular';
+}
+.new_path{
+    left:22px; top:5px;
+    font-size:40px;
+}
+.enter{
+    right:28px; top:11px;
+    font-size:32px;
+}
+.body_of_profile{
+    right:146.2px; top:38px;
+}
+.head_of_profile{
+    right:150px; top:14px;
+}
+.registration_user{
+    position:absolute;
+    width:150px;
+    height:54px;
+    top:11px; right:28px;
+    background-color:transparent; border:none;
+    cursor:pointer;
+}
+.middle{
+    position:absolute;
+    margin:0;
+}
+.main_picture{
+    left:700px; top:110px;
+    border-radius:39px;
+    box-shadow: 0 5px 10px -5px rgba(0,0,0,0.8);
+}
+.tour_of_Moscow{
+    font-family: 'Marck Script',Arial; font-style:'Regular'; font-size:41px; color: rgb(255, 255, 255);
+    -webkit-text-stroke: 0.5px rgb(160,47,212);
+    white-space: nowrap;
+    left:791px; top:118px;
+}
+.middle_walk{
+    font-family: 'Alice',Arial; font-style:'Regular'; font-size:40px; text-align:center;
+    left:575px; top:510px;
+    width:819px;
+}
+.tour_of_churches{
+    position:absolute;
+    margin:0;
+    font-family:'Alice',Arial; font-style:'Regular';
+    border-radius:20px;
+}
+.church{
+    width:236px;
+    font-size:28px; text-align:left;
+    left:435px; top:705px;
+}
+.pokrovski_img{
+    left:435px; top:790px;
+}
+.pokrovski_write{
+    width:266px;
+    font-size:24px;
+    left:475px; top:1010px;
+}
+.novodevichi_img{
+    left:825px; top:790px;
+}
+.novodevichi_write{
+    width:278px;
+    font-size:24px;
+    left:856px; top:1010px;
+}
+.and_more_tour_of_churches{
+    width:243px;
+    font-size:32px;
+    left:1230px; top:860px;
+}
+.animals_world{
+    position:absolute;
+    margin:0;
+    font-family:'Alice',Arial; font-style:'Regular';
+}
+.animals{
+    width:236px;
+    font-size:28px;
+    left:435px; top:1130px;
+}
+.monkey_planet_img{
+    left:435px; top:1185px;
+    border-radius:50px;
+}
+.monkey_planet_write{
+    width:236px;
+    font-size:24px;
+    left:508px; top:1465px;
+}
+.farm_vdnh_img{
+    left:825px; top:1200px;
+    border-radius:35px;
+}
+.farm_vdnh_write{
+    width:296px;
+    font-size:24px;
+    left:867px; top:1465px;
+}
+.and_more_animals_world{
+    width:243px;
+    font-size:32px;
+    left:1230px; top:1300px;
+}
+.culture{
+    position:absolute;
+    margin:0;
+    font-family:'Alice',Arial; font-style:'Regular';
+    border-radius:20px;
+}
+.education{
+    width:340px;
+    font-size:28px; text-align:left;
+    left:435px; top:1585px;
+}
+.patriarshi_img{
+    left:435px; top:1640px;
+}
+.patriarshi_write{
+    width:222px;
+    font-size:24px;
+    left:491px; top:1860px;
+}
+.evreiski_museum_img{
+    left:825px; top:1640px;
+}
+.evreiski_museum_write{
+    width:197px;
+    font-size:24px;
+    left:896px; top:1860px;
+}
+.and_more_culture{
+    width:243px;
+    font-size:32px;
+    left:1230px; top:1715px;
+}
