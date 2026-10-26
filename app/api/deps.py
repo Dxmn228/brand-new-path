@@ -21,16 +21,16 @@ async def _get_principal (token: str, db: AsyncSession, expected_role: str):
     if payload is None or payload.get("role") != expected_role:
         raise _CREDENTIALS_EXCEPTION
     try:
-        principal.id = int(payload["sub"])
-    except (KeyError, ValueErrror):
+        principal_id = int(payload["sub"])
+    except (KeyError, ValueError):
         raise _CREDENTIALS_EXCEPTION
     
     model = User if expected_role == "user" else Organization
-    result = await db.execute(select(model).where(model.id == principial_id))
-    principial = result.scalar_one_or_none()
-    if principial is None:
+    result = await db.execute(select(model).where(model.id == principal_id))
+    principal = result.scalar_one_or_none()
+    if principal is None:
         raise _CREDENTIALS_EXCEPTION
-    return principial
+    return principal
 
 async def get_current_user (token: str = Depends(oauth2_scheme), db: AsyncSession = Depends(get_db),) -> User:
     return await _get_principal(token, db, "user")

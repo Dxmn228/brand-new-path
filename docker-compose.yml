@@ -3,7 +3,7 @@ version: '3.8'
 services:
   db:
     image: postgres:16-alpine
-    container_name: studyhub-db
+    container_name: studyhub-db-local
     environment:
       POSTGRES_USER: studyhub_user
       POSTGRES_PASSWORD: studyhub_password

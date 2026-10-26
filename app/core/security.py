@@ -23,10 +23,10 @@ def create_access_token(subject: str, role: str) -> str:
     payload={
         "sub": subject,
         "role": role,
-        "exp": expire,
+        "exp": int(expire.timestamp()),
         "type": "access"
     }
-    return jwt.encode(payload, settings.Secret_Key, algorithm=settings.ALGORITHM)
+    return jwt.encode(payload, settings.SECRET_KEY, algorithm=settings.ALGORITHM)
 
 def decode_token(token:str) -> dict | None:
     try:
