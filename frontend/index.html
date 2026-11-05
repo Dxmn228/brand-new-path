@@ -26,8 +26,27 @@
             <p class="exit">Выйти</p>
             <div class="log_in">
                 <p class="log_in_enter">Вход</p>
-                <p class="log_in_text">Войдите в профиль с помощью никнейма и пароля</p>
-                <input type="text" name="nickname" placeholder=" имя (никнейм)" class="log_in_nickname">
+                <p class="log_in_text">Войдите в профиль с помощью email или телефона (на выбор) и пароля</p>
+                <form id ="login-form">
+                <input
+                    type="text"
+                    name="identifier"
+                    placeholder="Email или номер телефона"
+                    class="log_in_nickname"
+                    autocomplete="username"
+                    required
+                >
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Пароль"
+                    class="log_in_password"
+                    autocomplete="current-password"
+                    required
+                >
+                <button type="submit" class="log_in_submit">Войти</button>
+                <p id="login-message" role="status"></p>
+                </form>
             </div>
             <button class="exit_button" onclick="close_user_window()"></button>
         </div>
@@ -73,6 +92,7 @@
         });
         AOS.init();
     </script>
+    <script src="api.js"></script>
     <script src="registration_user.js"></script>
 </body>
 </html>
