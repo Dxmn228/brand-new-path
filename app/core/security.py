@@ -26,7 +26,7 @@ def create_access_token(subject: str, role: str) -> str:
         "exp": expire,
         "type": "access"
     }
-    return jwt.encode(payload, settings.Secret_Key, algorithm=settings.ALGORITHM)
+    return jwt.encode(payload, settings.SECRET_KEY, algorithm=settings.ALGORITHM)
 
 def decode_token(token:str) -> dict | None:
     try:
