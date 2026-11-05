@@ -56,11 +56,11 @@ class RefreshRequest(BaseModel):
 
 class UserRead(BaseModel):
     id: int
-    full_name: int
+    full_name: str
     email: EmailStr
     phone: str
     
-    model_config = {"from_atributes": True}
+    model_config = {"from_attributes": True}
 
 class OrganizationRead (BaseModel):
     id: int
