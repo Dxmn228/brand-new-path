@@ -29,6 +29,29 @@ async function loginUser(emailOrPhone, password) {
     return data;
 }
 
+// Регистрация пользователя. Названия полей соответствуют UserRegister.
+async function registerUser(userData) {
+    const response = await fetch(`${API_URL}/auth/register/user`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userData)
+    });
+
+    const data = await response.json().catch(() => null);
+
+    if (!response.ok) {
+        const detail = data?.detail;
+        const message = Array.isArray(detail)
+            ? detail.map(error => error.msg).join("; ")
+            : typeof detail === "string" ? detail : `Ошибка сервера: ${response.status}`;
+        throw new Error(message);
+    }
+
+    return data;
+}
+
 // Проверка доступности backend
 async function checkBackend() {
     const response = await fetch(`${API_URL}/health`);
