@@ -55,7 +55,8 @@ async def register_user(data: UserRegister, request: Request, db: AsyncSession =
         password_hash=hash_password(data.password),
     )
     db.add(user)
-    await db.commit()
+    # Пользователь и сессия сохраняются вместе в _create_session_and_tokens.
+    await db.flush()
     await db.refresh(user)
 
     return await _create_session_and_tokens(db, request, user_id=user.id, role="user", subject_id=user.id)
@@ -74,7 +75,7 @@ async def register_organization(data: OrganizationRegister, request: Request, db
         password_hash=hash_password(data.password),
     )
     db.add(org)
-    await db.commit()
+    await db.flush()
     await db.refresh(org)
 
     return await _create_session_and_tokens(db, request, organization_id=org.id, role="organization", subject_id=org.id)
