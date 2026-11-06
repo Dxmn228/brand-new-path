@@ -26,9 +26,9 @@ class _PasswordsMatchMixin(BaseModel):
         if hasattr(self, "password") and hasattr(self, "password_confirm"):
             if self.password is not None and self.password != self.password_confirm:
                 raise ValueError("Пароли не совпадают")
-            return self
+        return self
 
-class UserRegister(_PasswordValidatorsMixin):
+class UserRegister(_PasswordValidatorsMixin, _PasswordsMatchMixin):
 
     full_name: str = Field(..., min_length=1, max_length=50)
     email: EmailStr
@@ -36,7 +36,7 @@ class UserRegister(_PasswordValidatorsMixin):
     password: str
     password_confirm: str
 
-class OrganizationRegister(_PasswordValidatorsMixin):
+class OrganizationRegister(_PasswordValidatorsMixin, _PasswordsMatchMixin):
     name: str = Field(..., min_length=1, max_length=200)
     email: EmailStr
     phone: str
