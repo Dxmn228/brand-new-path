@@ -12,8 +12,8 @@
 }
 .background{
     position:absolute;
-    top:40%; left:50%; transform: translate(-50%, -50%);
-    width: 1000px; height: 500px;
+    top:45%; left:50%; transform: translate(-50%, -50%);
+    width: 1000px; height: 600px;
     border-radius: 25px;
     background-color: white;
 }
@@ -33,10 +33,10 @@
     top:25%; left:36.5%; transform: translate(-50%, -50%);
     width: 360px; text-align: center;
 }
-.log_in_nickname{
+.log_in_email_or_phone_number{
     position:absolute;
     margin: 0px;
-    top:34%; left:36%; transform: translate(-50%, -50%);
+    top:35%; left:36%; transform: translate(-50%, -50%);
     width: 100%; max-width: 200px;
     font-size: 14px;
     border-radius: 5px;

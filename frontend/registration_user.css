@@ -1,0 +1,72 @@
+.registration_task {
+    position:absolute;
+    font-family: 'Dela Gothic One',Arial; font-style:'Regular'; font-size:37px; color: black;
+    top:17%; left:62%; transform: translate(-50%, -50%);
+}
+.registration_text {
+    position:absolute;
+    font-family: 'Alice',Arial; font-style:'Regular'; font-size:20px; color: black;
+    top:26%; left:62%; transform: translate(-50%, -50%);
+    width: 360px; text-align: center;
+}
+.registration_name {
+    position:absolute;
+    margin: 0px;
+    top:35%; left:62%; transform: translate(-50%, -50%);
+    width: 100%; max-width: 200px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.registration_email {
+    position:absolute;
+    margin: 0px;
+    top:39%; left:62%; transform: translate(-50%, -50%);
+    width: 100%; max-width: 200px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.registration_phone {
+    position:absolute;
+    margin: 0px;
+    top:43%; left:62%; transform: translate(-50%, -50%);
+    width: 100%; max-width: 200px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.password_first {
+    position:absolute;
+    font-family: 'Alice',Arial; font-style:'Regular'; font-size:20px; color: black;
+    top:46%; left:62%; transform: translate(-50%, -50%);
+    width: 300px; text-align: center;
+}
+.registration_password {
+    position:absolute;
+    margin: 0px;
+    top:53%; left:62%; transform: translate(-50%, -50%);
+    width: 100%; max-width: 200px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.repeat_password {
+    position:absolute;
+    margin: 0px;
+    top:57%; left:62%; transform: translate(-50%, -50%);
+    width: 100%; max-width: 200px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.registration_submit {
+    position:absolute;
+    font-family: 'Alice',Arial; font-style:'Regular'; font-size:25px; color: black; text-align: center;
+    width:260px; height:65px;
+    top:62%; left:62%; transform: translateX(-50%);
+    background-color:transparent; border-color: black; border-radius: 10px;
+    cursor:pointer;
+}
+#registration-message {
+    position: absolute;
+    top: 73%; left: 62%; transform: translateX(-50%);
+    width: 300px; margin: 0;
+    font-family: 'Alice', Arial; font-size: 18px; text-align: center;
+    overflow-wrap: anywhere;
+}
