@@ -3,6 +3,7 @@ from sqlalchemy import (
     String, DateTime, ForeignKey, CheckConstraint, func,
 )
 from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.dialects.postgresql import INET
 
 from app.db.base import Base
 
@@ -30,7 +31,7 @@ class Session(Base):
     )
 
     user_agent: Mapped[str | None] = mapped_column(String(500), nullable=True)
-    ip_address: Mapped[str | None] = mapped_column(String(45), nullable=True)
+    ip_address: Mapped[str | None] = mapped_column(INET, nullable=True)
     expires_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), nullable=False
     )
