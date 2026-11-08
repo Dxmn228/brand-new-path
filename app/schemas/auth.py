@@ -30,7 +30,7 @@ class _PasswordsMatchMixin(BaseModel):
 
 class UserRegister(_PasswordValidatorsMixin, _PasswordsMatchMixin):
 
-    full_name: str = Field(..., min_length=1, max_length=50)
+    full_name: str = Field(..., min_length=1, max_length=25)
     email: EmailStr
     phone: str
     password: str
