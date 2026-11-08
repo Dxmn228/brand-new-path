@@ -15,97 +15,21 @@
 </head>
 <body>
     <div class="header">
-        <img src="visual elements for main page/header_white.svg">
+        <img src="global visual elements/header_white.svg" class="white_head">
         <p class="header new_path">Новый путь</p>
-        <p class="header enter">войти</p>
-        <img src="visual elements for main page/body_of_profile.svg" class="header body_of_profile">
-        <img src="visual elements for main page/head_of_profile.svg" class="header head_of_profile">
-        <button class="enter_user" onclick="open_user_window()"></button>
-    </div>
-    <div id="user_window" class="user_window">
-        <p class="background"></p>
-        <p class="exit">Выйти</p>
-        <div class="log_in">
-            <p class="log_in_enter">Вход</p>
-            <p class="log_in_text">Войдите в профиль с помощью email или телефона (на выбор) и пароля</p>
-            <form id ="login-form">
-            <input
-                type="text"
-                name="identifier"
-                placeholder="Email или номер телефона"
-                class="log_in_email_or_phone_number"
-                autocomplete="username"
-                required
-            >
-            <input
-                type="password"
-                name="password"
-                placeholder="Пароль"
-                class="log_in_password"
-                autocomplete="current-password"
-                required
-            >
-            <button type="submit" class="log_in_submit">Войти</button>
-            <p id="login-message" role="status"></p>
-            </form>
+        <button type="button" class="enter_main_page"></button>
+        <div id="auth_controls">
+            <p class="header enter">войти</p>
+            <img src="global visual elements/body_of_profile.svg" class="header body_of_profile">
+            <img src="global visual elements/head_of_profile.svg" class="header head_of_profile">
+            <button type="button" class="enter_user" onclick="open_user_window()"></button>
         </div>
-        <div class="registration">
-            <p class="registration_task">Регистрация</p>
-            <p class="registration_text">Зарегестрируйте свой профиль, используя свое имя, email и номер телефона</p>
-            <form id="registration-form" method="post">
-            <input
-                type="text"
-                name="full_name"
-                placeholder="Ваше имя"
-                class="registration_name"
-                autocomplete="name"
-                minlength="1"
-                maxlength="50"
-                required
-            >
-            <input
-                type="email"
-                name="email"
-                placeholder="Ваш email"
-                class="registration_email"
-                autocomplete="email"
-                required
-            >
-            <input
-                type="tel"
-                name="phone"
-                placeholder="+79991234567"
-                class="registration_phone"
-                autocomplete="tel"
-                pattern="\+7[0-9]{10}"
-                minlength="12"
-                maxlength="12"
-                required
-            >
-            <p class="password_first">Введите пароль в первом поле и повторите во втором</p>
-            <input
-                type="password"
-                name="password"
-                placeholder="Введите свой пароль"
-                class="registration_password"
-                autocomplete="new-password"
-                minlength="8"
-                required
-            >
-            <input
-                type="password"
-                name="password_confirm"
-                placeholder="Повторите свой пароль"
-                class="repeat_password"
-                autocomplete="new-password"
-                minlength="8"
-                required
-            >
-            <button type="submit" class="registration_submit">Зарегистрироваться</button>
-            <p id="registration-message" role="status" aria-live="polite"></p>
-            </form>
+        <div id="account_icon" hidden>
+            <button type="button" class="account_button"></button>
+            <img src="global visual elements/account_background.svg" class="header account_background">
+            <img src="global visual elements/account_body.svg" class="header account_body">
+            <img src="global visual elements/account_head.svg" class="header account_head">
         </div>
-        <button class="exit_button" onclick="close_user_window()"></button>
     </div>
     <div class="middle">
         <img src="visual elements for main page/moscow-city.jpg" class="middle main_picture">
@@ -138,6 +62,10 @@
         <p class="culture evreiski_museum_write">Еврейский музей</p>
         <p class="culture and_more_culture">и многое другое</p>
     </div>
+    <script src="auth_window.js"></script>
+    <script src="api.js"></script>
+    <script src="enter_user.js"></script>
+    <script src="registration_user.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         document.querySelectorAll('.tour_of_churches, .animals_world, .culture').forEach(element => {
@@ -148,8 +76,5 @@
         });
         AOS.init();
     </script>
-    <script src="api.js"></script>
-    <script src="enter_user.js"></script>
-    <script src="registration_user.js"></script>
 </body>
 </html>
