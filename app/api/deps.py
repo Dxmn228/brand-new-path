@@ -16,21 +16,26 @@ _CREDENTIALS_EXCEPTION = HTTPException (
     headers = {"WWW-Authenticate": "Bearer"},
 )
 
-async def _get_principal (token: str, db: AsyncSession, expected_role: str):
+async def _get_principal (token: str, db: AsyncSession, expected_role: str | None = None):
     payload = decode_token(token)
-    if payload is None or payload.get("role") != expected_role:
+    if payload is None or payload.get("role") not in ("user", "organization"):
+        raise _CREDENTIALS_EXCEPTION
+    if expected_role is not None and payload.get("role") != expected_role:
         raise _CREDENTIALS_EXCEPTION
     try:
-        principal.id = int(payload["sub"])
-    except (KeyError, ValueErrror):
+        principal_id = int(payload["sub"])
+    except (KeyError, ValueError, TypeError):
         raise _CREDENTIALS_EXCEPTION
     
-    model = User if expected_role == "user" else Organization
-    result = await db.execute(select(model).where(model.id == principial_id))
-    principial = result.scalar_one_or_none()
-    if principial is None:
+    model = User if payload["role"] == "user" else Organization
+    result = await db.execute(select(model).where(model.id == principal_id))
+    principal = result.scalar_one_or_none()
+    if principal is None:
         raise _CREDENTIALS_EXCEPTION
-    return principial
+    return principal
+
+async def get_current_account(token: str = Depends(oauth2_scheme), db: AsyncSession = Depends(get_db)) -> User | Organization:
+    return await _get_principal(token, db)
 
 async def get_current_user (token: str = Depends(oauth2_scheme), db: AsyncSession = Depends(get_db),) -> User:
     return await _get_principal(token, db, "user")

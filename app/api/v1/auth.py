@@ -4,6 +4,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy import or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.api.deps import get_current_account
 from app.core.config import settings
 from app.core.security import (
     create_access_token, generate_refresh_token, hash_password,
@@ -18,6 +19,10 @@ from app.schemas.auth import (
 )
 
 router = APIRouter(prefix="/auth", tags=["Auth"])
+
+@router.get("/me")
+async def get_my_account(account: User | Organization = Depends(get_current_account)):
+    return {"id": account.id, "role": "user" if isinstance(account, User) else "organization"}
 
 async def _create_session_and_tokens(
     db: AsyncSession, request: Request, *, 
