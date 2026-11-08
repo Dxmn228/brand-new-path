@@ -6,11 +6,20 @@ html,body {
     min-height:100%;
     padding-bottom:1500px;
 }
+
 .header{
     position:absolute;
     border:none;
     margin:0;
     font-family: 'Dela Gothic One',Arial; font-style:'Regular';
+}
+.enter_main_page {
+    position:absolute;
+    width:277.95px;
+    height:50px;
+    top:15px; left:22px;
+    background-color:transparent; border:none;
+    cursor:pointer; z-index:1;
 }
 .new_path{
     left:22px; top:5px;
@@ -33,6 +42,27 @@ html,body {
     top:11px; right:28px;
     background-color:transparent; border:none;
     cursor:pointer;
+}
+.account_button {
+    position:absolute;
+    width:52px;
+    height:55px;
+    top:14px; right:110px;
+    background-color:transparent; border:none;
+    cursor:pointer; z-index: 1;
+}
+#auth_controls[hidden],
+#account_icon[hidden] {
+    display: none;
+}
+.account_background {
+    right:110px; top:14px;
+}
+.account_body {
+    right:113.5px; top:39.5px;
+}
+.account_head {
+    right:119px; top:26px; 
 }
 .middle{
     position:absolute;
