@@ -24,6 +24,7 @@ function updateAuthUI(isAuthenticated) {
 
 function open_user_window() {
     if (user_window) {
+        user_window.hidden = false;
         user_window.classList.add('active');
     }
 }
@@ -60,6 +61,7 @@ window.addEventListener('focus', checkAuthentication);
 function close_user_window() {
     if (user_window) {
         user_window.classList.remove('active');
+        user_window.hidden = true;
     }
 }
 
