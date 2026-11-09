@@ -6,7 +6,7 @@ async function loginUser(emailOrPhone, password) {
     const formData = new URLSearchParams();
 
     // FastAPI OAuth2PasswordRequestForm ожидает
-    // поля username и password в form-urlencoded.
+    // поля username и password в form-urlencoded
     formData.set("username", emailOrPhone);
     formData.set("password", password);
 
@@ -18,12 +18,18 @@ async function loginUser(emailOrPhone, password) {
         body: formData.toString()
     });
 
-    const data = await response.json();
+    const data = await response.json().catch(() => null);
 
     if (!response.ok) {
-        throw new Error(
-            data.detail || `Ошибка сервера: ${response.status}`
-        );
+        const detail = data?.detail;
+        const message = response.status === 401
+            ? "Неверный email, телефон или пароль. Проверьте данные и попробуйте снова."
+            : Array.isArray(detail)
+                ? detail.map(error => error.msg).join("; ")
+                : typeof detail === "string" ? detail : "Не удалось выполнить вход. Попробуйте позже.";
+        const error = new Error(message);
+        error.status = response.status;
+        throw error;
     }
 
     return data;
@@ -50,6 +56,22 @@ async function registerUser(userData) {
     }
 
     return data;
+}
+
+// Backend проверяет подпись и срок действия токена, затем ищет аккаунт в БД.
+async function getCurrentAccount(token) {
+    const response = await fetch(`${API_URL}/auth/me`, {
+        headers: { "Authorization": `Bearer ${token}` },
+        cache: "no-store"
+    });
+
+    if (!response.ok) {
+        const error = new Error("Не удалось проверить вход в аккаунт");
+        error.status = response.status;
+        throw error;
+    }
+
+    return response.json();
 }
 
 // Проверка доступности backend
