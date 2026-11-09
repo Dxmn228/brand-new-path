@@ -14,6 +14,8 @@ if (!document.getElementById('user_window')) {
                 placeholder="Email или номер телефона"
                 class="log_in_email_or_phone_number"
                 autocomplete="username"
+                minlength="11"
+                maxlength="25"
                 aria-describedby="login-message"
                 required
             >
@@ -23,6 +25,8 @@ if (!document.getElementById('user_window')) {
                 placeholder="Пароль"
                 class="log_in_password"
                 autocomplete="current-password"
+                minlength="8"
+                maxlength="25"
                 aria-describedby="login-message"
                 required
             >
@@ -50,6 +54,8 @@ if (!document.getElementById('user_window')) {
                 placeholder="Ваш email"
                 class="registration_email"
                 autocomplete="email"
+                minlength="11"
+                maxlength="25"
                 required
             >
             <input
@@ -71,6 +77,7 @@ if (!document.getElementById('user_window')) {
                 class="registration_password"
                 autocomplete="new-password"
                 minlength="8"
+                maxlength="25"
                 required
             >
             <input
@@ -80,6 +87,7 @@ if (!document.getElementById('user_window')) {
                 class="repeat_password"
                 autocomplete="new-password"
                 minlength="8"
+                maxlength="25"
                 required
             >
             <button type="submit" class="registration_submit">Зарегистрироваться</button>
