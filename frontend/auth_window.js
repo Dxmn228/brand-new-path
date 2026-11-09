@@ -1,7 +1,7 @@
 // Общая разметка входа и регистрации. Подключать перед enter_user.js и registration_user.js.
 if (!document.getElementById('user_window')) {
     document.body.insertAdjacentHTML('beforeend', String.raw`
-    <div id="user_window" class="user_window">
+    <div id="user_window" class="user_window" hidden>
         <p class="background"></p>
         <p class="exit">Выйти</p>
         <div class="log_in">

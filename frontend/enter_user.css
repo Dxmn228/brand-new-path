@@ -6,7 +6,7 @@
     z-index:1;
     display:none;
 }
-#user_window.active{
+#user_window.active:not([hidden]){
     display: flex;
     align-items: center;
     justify-content: center;
